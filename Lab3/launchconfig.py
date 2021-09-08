@@ -9,10 +9,9 @@ import time
 4. Up and Down Alarm
 
 """
-access_id_key = "ASIA2QSCNKB2WDBS2OSX"
-secret_access_key = "J0yeMQzTVGbS3Bhgkmg76hZYZjxvnr3xixAjEw+b"
-session_token_key = "FwoGZXIvYXdzEHMaDJOIDfosn25M1PpM7yLKAV8E6TLm/fxTj5WAzmV0QCHj2CAicycZBdIL3gIw3RytbwN+Ljumq6wdc6F/j2L8pQwaDxxCvG3beRfSk7sH24WSbTG2ItXac+u4hq6Md6g/Zz1U4dSPJiExk4B5xcobf/3eEKEJWewEog3lpNG6fgD7k2h4ahx29gf4hm7JgwNh8heudOIbFVEhOTM8tZ0c7d1EToNed0MRKS1lnXZe2y2Ew+YzzhWaVnGItT5xTUtyz7y7mc3ghy/UM93HdyaQfzKLJ/kAFXjlmNAox+jjiQYyLXhKk76wtBX05SmvB8SW9pu6KGzEsXPlhrwoEaTcadB8rqepP3tAq1jLiWCeCA=="
-
+access_id_key = ""
+secret_access_key = ""
+session_token_key = ""
 
 auto_scale = boto3.client(
     "autoscaling",
