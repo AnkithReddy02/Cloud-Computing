@@ -1,0 +1,1 @@
+add mysql/aurora anywhere ipv4 in inbound rules of deafult security group
