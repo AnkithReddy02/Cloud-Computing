@@ -1,0 +1,17 @@
+
+# for local machine
+sudo apt-get update
+sudo apt-get install vim
+
+ https://github.com/RagedUnicorn/docker-tomcat
+ 
+ inside above directory : ... .war file and Dockerfile(according to below blog)
+ 
+ 
+ https://medium.com/@vishal.sharma./deploy-a-sample-war-java-application-on-docker-25729d4840d5
+ 
+ inbound rules of security group : https://stackoverflow.com/a/48745557
+ 
+ Docker basics : https://docs.aws.amazon.com/AmazonECS/latest/developerguide/docker-basics.html
+ 
+ 
