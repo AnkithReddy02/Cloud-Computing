@@ -1,0 +1,1 @@
+install docker in your local machine and follow the commands file
