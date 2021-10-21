@@ -1,0 +1,46 @@
+
+
+**Dont install docker in EC2 space wont be sufficient, do it in your local machine
+**Docker file no change, keep it as it is.
+
+
+**q2,q3,Dockerfile must be in testfolder
+
+1. Docker build C:/Users/ankit/testfolder
+
+command : docker images => will list the docker images.. ( take the image id which is around 4.1 GB)
+
+2. docker run -d -it --name=pyC -v C:/Users/ankit/testfolder:/myfolder 3f54451dcd80 => this is image ID( different for different users)
+
+3. docker exec -it pyC /bin/bash
+
+inside container 
+
+4. apt-get install vim
+
+** mapper.py, reducer.py, inputfiles etc must be present in testfolder( which is mounted to myfolder)
+
+5 .
+
+hadoop jar /usr/local/hadoop/share/hadoop/tools/lib/hadoop-streaming-*.jar -input /myfolder/q1/bigo.txt -output /myfolder/q1Output -mapper "python /myfolder/q1/mapper.py" -reducer "python /myfolder/q1/reducer.py"
+
+
+hadoop jar /usr/local/hadoop/share/hadoop/tools/lib/hadoop-streaming-*.jar -input /myfolder/q2/bigo.txt -output /myfolder/q2Output -mapper "python /myfolder/q2/mapper.py" -combiner "python /myfolder/q2/combiner.py"
+
+
+hadoop jar /usr/local/hadoop/share/hadoop/tools/lib/hadoop-streaming-*.jar -input /myfolder/q3/iris.data -output /myfolder/q3Output -mapper "python /myfolder/q3/mapper.py" -reducer "python /myfolder/q3/reducer.py"
+
+** output will be in the folder /myfolder/q2Output respectively for other command, open the file ("part-00000") which is present in the  /myfolder/q2Output
+
+
+to remove the image
+
+6*. docker rmi imageID
+
+To stop and remove the container
+
+7*. docker container stop containerName
+
+8*. docker container rm containerName
+
+
