@@ -1,0 +1,47 @@
+
+
+**Dont install docker in EC2 space wont be sufficient, do it in your local machine
+**Docker file no change, keep it as it is.
+
+
+**q2,q3,Dockerfile must be in testfolder
+
+1. Docker build C:/Users/ankit/testfolder
+
+command : docker images => will list the docker images.. ( take the image id which is around 4.1 GB)
+
+2. docker run -d -it --name=pyC -v C:/Users/ankit/testfolder:/myfolder a1da1aecedca => this is image ID( different for different users)
+
+3. docker exec -it pyC /bin/bash
+
+inside container 
+
+4. apt-get install vim
+
+** mapper.py, reducer.py, inputfiles etc must be present in testfolder( which is mounted to myfolder)
+
+5 .
+
+hadoop jar /usr/local/hadoop/share/hadoop/tools/lib/hadoop-streaming-*.jar -input /myfolder/bigo.txt -output /myfolder/output1 -mapper "python /myfolder/mapper1.py" -reducer "python /myfolder/reducer1.py"
+
+
+hadoop jar /usr/local/hadoop/share/hadoop/tools/lib/hadoop-streaming-*.jar -input /myfolder/bigo.txt -output /myfolder/output2 -mapper "python /myfolder/mapper2.py" -reducer "python /myfolder/reducer2.py"
+
+
+hadoop jar /usr/local/hadoop/share/hadoop/tools/lib/hadoop-streaming-*.jar -input /myfolder/bigo.txt -output /myfolder/output3 -mapper "python /myfolder/mapper3.py" -combiner "python /myfolder/combiner3.py" -reducer "python /myfolder/reducer3.py"
+
+hadoop jar /usr/local/hadoop/share/hadoop/tools/lib/hadoop-streaming-*.jar -input /myfolder/bigo.txt -output /myfolder/output2 -mapper "python /myfolder/mapper4.py" -reducer "python /myfolder/reducer4.py"
+
+
+
+to remove the image
+
+6*. docker rmi imageID
+
+To stop and remove the container
+
+7*. docker container stop containerName
+
+8*. docker container rm containerName
+
+
