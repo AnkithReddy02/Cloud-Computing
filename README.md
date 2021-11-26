@@ -1,6 +1,6 @@
 # AWS-Cloud-Assignments
 
-These assignments are a part of Cloud Computing Course ( CS351 ) - AWS
+These assignments are a part of Cloud Computing Course [ IT-Workshop II ]  ( CS351 ) - AWS
 
 Contents : 
 
